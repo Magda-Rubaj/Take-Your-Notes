@@ -55,6 +55,8 @@ ROOT_URLCONF = 'take_your_notes.urls'
 
 LOGIN_REDIRECT_URL = '/home'
 
+LOGOUT_REDIRECT_URL = '/accounts/login'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
