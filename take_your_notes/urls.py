@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include(('take_your_notes.apps.user.urls', 'user'), namespace='user')),
     path('', include(('take_your_notes.apps.core.urls', 'core'), namespace='core')),
-    re_path(r'^.*$', RedirectView.as_view(url='/accounts/login', permanent=False), name='login')
+    path('categories/', include(('take_your_notes.apps.category.urls', 'categories'), namespace='categories')),
+    #re_path(r'^.*$', RedirectView.as_view(url='/accounts/login', permanent=False), name='login')
 ]

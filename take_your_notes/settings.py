@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'take_your_notes.apps.core',
-    'take_your_notes.apps.user'
+    'take_your_notes.apps.user',
+    'take_your_notes.apps.category'
 ]
 
 MIDDLEWARE = [

@@ -14,10 +14,12 @@ class GuestView(View):
             return redirect(settings.LOGIN_REDIRECT_URL)
 
         return super().dispatch(request, *args, **kwargs)
+
 class SignUpView(FormView, GuestView):
     form_class = SignUpForm
     template_name = 'user/signup.html'
     success_url = reverse_lazy('core:home')
+
     def form_valid(self, form):
         request = self.request
         user = form.save()
@@ -33,6 +35,7 @@ class SignInView(FormView, GuestView):
     form_class = SignInForm
     template_name = 'user/signin.html'
     success_url = reverse_lazy('core:home')
+    
     def form_valid(self, form):
         request = self.request
         login(request, form.user_cache)
