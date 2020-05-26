@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% block meta_title %}Take Your Notes{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
   </head>
   <body>
     {% block content %}{% endblock %}
