@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'take_your_notes.apps.core',
     'take_your_notes.apps.user',
-    'take_your_notes.apps.category'
+    'take_your_notes.apps.category',
+    'take_your_notes.apps.note',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 ROOT_URLCONF = 'take_your_notes.urls'
 
@@ -133,3 +138,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"take_your_notes", "static"),
 ]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'media/'
+
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + 'uploads/'

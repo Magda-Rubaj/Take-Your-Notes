@@ -28,6 +28,6 @@ class SignInForm(forms.Form):
         password = self.cleaned_data['password']
 
         if not self.user_cache.check_password(password):
-            raise ValidationError(_('You entered an invalid password.'))
+            raise ValidationError(_('You have entered an invalid password.'))
 
         return password

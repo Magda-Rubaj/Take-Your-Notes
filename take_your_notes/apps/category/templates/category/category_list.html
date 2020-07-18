@@ -1,10 +1,17 @@
 {% extends "base.html" %}
+{% load filters %}
 
 {% block content %}
 {% include "nav_user.html" %}
+<a href='/categories/create'>Add Category</a>
 <ul>
     {% for object in object_list %} 
     <li>{{object.name}}</li>
+    <a href='/notes/{{ object.pk }}/create'>Add Note</a>
+        {% for note in object.id|note_list %} 
+            {{note.name}}
+        {% endfor %} 
+    
     {% empty %} 
     <li>No objects yet.</li> 
     {% endfor %} 
