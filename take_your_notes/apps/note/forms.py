@@ -6,7 +6,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import Note
 
 
-class NoteCreationForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
     class Meta:
         model = Note
         fields = ('name', 'content',)
