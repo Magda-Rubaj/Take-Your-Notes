@@ -1,0 +1,94 @@
+*{
+    margin:0px;
+    padding:0px; 
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    background: rgb(232, 230, 230);
+    font-family: 'Questrial', sans-serif;
+}
+.nav{
+    background: black;
+    height: 100%;
+    width: 15%;
+    left:0%;
+    top: 0%;
+    position: fixed;
+    .navblock{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 20%;
+        a{
+            margin-top: 13%;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+.main{
+    margin-left: 15%;
+    margin-top: 3%;
+    ul{
+        list-style-type: none;
+    }
+    .category{
+        background:rgb(107, 0, 54);
+        width: 95%;
+        height: 60px;
+        margin-left: 2%;
+        padding-left: 3%;
+        display: flex;
+        margin-top: 30px;
+        border-radius: 10px;
+        justify-content: space-between;
+        li{
+            color: white;
+            font-size: 30px;
+            align-self: center;
+        }
+        a{
+            background: url("../resources/add_circle.png")no-repeat;
+            background-size: cover;
+            width:48px;
+            height: 48px;
+            align-self: center;
+            margin-right: 1%;
+        }
+    }
+    .note{
+        margin-left: 6%;
+        width: 85%;
+        height: 50px;
+        background: #ffffff;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        border-radius: 10px;
+        padding-left: 3%;
+        box-shadow: 0 0 10px rgba(129, 129, 129, 0.753);
+        display: flex;
+        justify-content: space-between;
+        .edit{
+            background: url("../resources/edit.png")no-repeat;
+            background-size: cover;
+            width: 35px;
+            height: 35px;
+            margin-right: 1%;
+            align-self: center;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .note_name{
+            align-self: center;
+        }
+    }
+}

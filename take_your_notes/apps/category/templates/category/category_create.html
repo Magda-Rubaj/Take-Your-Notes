@@ -2,9 +2,11 @@
 
 {% block content %}
 {% include "nav_user.html" %}
-<form method="post"> 
-    {% csrf_token %} 
-    {{ form.as_p }} 
-    <input type="submit" value="Add"> 
-</form> 
+<div class="main">
+    <form method="post"> 
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <input type="submit" value="Add"> 
+    </form> 
+</div>
 {% endblock %}

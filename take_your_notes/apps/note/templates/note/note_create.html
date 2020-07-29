@@ -2,12 +2,14 @@
 
 {% block content %}
     {% include "nav_user.html" %}
-    {% autoescape off %}
-    <form method="post"> 
-        {% csrf_token %} 
-        {{ form.media }}
-        {{ form.as_p }} 
-        <input type="submit" value="Create"> 
-    </form> 
-    {% endautoescape %}
+    <div class="main">
+        {% autoescape off %}
+        <form method="post"> 
+            {% csrf_token %} 
+            {{ form.media }}
+            {{ form.as_p }} 
+            <input type="submit" value="Create"> 
+        </form> 
+        {% endautoescape %}
+    </div>
 {% endblock %}

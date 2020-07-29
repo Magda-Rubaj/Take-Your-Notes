@@ -2,8 +2,10 @@
 
 {% block content %}
     {% include "nav_user.html" %}
-    {% autoescape off %}
-        <h1>{{ note.name}}</h1>
-        <p>{{ note.content }}</p>
-    {% endautoescape %}
+    <div class="main">
+        {% autoescape off %}
+            <h1>{{ note.name}}</h1>
+            <p>{{ note.content }}</p>
+        {% endautoescape %}
+    </div>
 {% endblock %}

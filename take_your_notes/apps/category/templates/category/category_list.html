@@ -3,17 +3,23 @@
 
 {% block content %}
 {% include "nav_user.html" %}
-<a href='/categories/create'>Add Category</a>
-<ul>
-    {% for object in object_list %} 
-    <li>{{object.name}}</li>
-    <a href='/notes/{{ object.pk }}/create'>Add Note</a>
-        {% for note in object.id|note_list %} 
-        <br><a href='/notes/detail/{{note.pk}}'>{{ note.name }}</a>
-        <a href='/notes/edit/{{note.pk}}'>edit</a>
+<div class="main">
+    <a href='/categories/create'>Add Category</a>
+    <ul>
+        {% for object in object_list %} 
+        <div class="category">
+            <li>{{object.name}}</li>
+            <a href='/notes/{{ object.pk }}/create'></a>
+        </div>
+                {% for note in object.id|note_list %} 
+                <div class="note">
+                    <a class="note_name" href='/notes/detail/{{note.pk}}'>{{ note.name }}</a>
+                    <a class="edit" href='/notes/edit/{{note.pk}}'></a>
+                </div>
+                {% endfor %} 
+        {% empty %} 
+            <li>No categories yet.</li> 
         {% endfor %} 
-    {% empty %} 
-    <li>No categories yet.</li> 
-    {% endfor %} 
-</ul>
+    </ul>
+</div>
 {% endblock %}
