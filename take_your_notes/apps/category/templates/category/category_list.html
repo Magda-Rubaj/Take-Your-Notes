@@ -4,7 +4,6 @@
 {% block content %}
 {% include "nav_user.html" %}
 <div class="main">
-    <a href='/categories/create'>Add Category</a>
     <ul>
         {% for object in object_list %} 
         <div class="category">
@@ -21,5 +20,6 @@
             <li>No categories yet.</li> 
         {% endfor %} 
     </ul>
+    <button class="add_category" href='/categories/create'>Add Category</a>
 </div>
 {% endblock %}
