@@ -10,8 +10,8 @@
             <li>{{object.name}}</li>
             <div class="btn-wrapper">
                 <a href='/notes/{{ object.pk }}/create'></a>
-                <button type="button" class="btn-delete" data-toggle="modal" data-target="#exampleModal"> </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <button type="button" class="btn-delete" data-toggle="modal" data-target="#ctgmodal"> </button>
+                <div class="modal fade" id="ctgmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -34,7 +34,28 @@
                 {% for note in object.id|note_list %} 
                 <div class="note">
                     <a class="note_name" href='/notes/detail/{{note.pk}}'>{{ note.name }}</a>
-                    <a class="edit" href='/notes/edit/{{note.pk}}'></a>
+                    <div class="btn-wrapper">
+                        <a class="edit" href='/notes/edit/{{note.pk}}'></a>
+                        <button type="button" class="btn-delete-note" data-toggle="modal" data-target="#notemodal"> </button>
+                        <div class="modal fade" id="notemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h6 id="exampleModalLabel">This note will be deleted. Do you wish to proceed?</h6>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Yes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %} 
         {% empty %} 

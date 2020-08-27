@@ -82,6 +82,12 @@ nav{
     ul{
         list-style-type: none;
     }
+    .btn-wrapper{
+        display: inline-flex;
+        align-self: center;
+        margin-right: 1%;
+        
+    }
     .category{
         background:rgb(107, 0, 54);
         width: 95%;
@@ -96,12 +102,6 @@ nav{
             color: white;
             font-size: 30px;
             align-self: center;
-        }
-        .btn-wrapper{
-            display: inline-flex;
-            align-self: center;
-            margin-right: 1%;
-            height: 48px;  
         }
         a{
             background: url("../resources/add_circle.png")no-repeat;
@@ -131,6 +131,14 @@ nav{
         box-shadow: 0 0 10px rgba(129, 129, 129, 0.753);
         display: flex;
         justify-content: space-between;
+        .btn-delete-note{
+            background: url("../resources/delete_black.png")no-repeat;
+            background-size: cover;
+            width:35px;
+            height: 35px;
+            border: none;
+            display: block;  
+        }
         .edit{
             background: url("../resources/edit.png")no-repeat;
             background-size: cover;
