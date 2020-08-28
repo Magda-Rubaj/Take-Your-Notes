@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
+from django.views.generic.edit import DeleteView
 from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse_lazy
 from .models import Category
@@ -34,6 +35,14 @@ class CategoryCreateView(CreateView):
 
 class CategoryDetailView(DetailView):
     model = Category
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    success_url = reverse_lazy('categories:all')
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
