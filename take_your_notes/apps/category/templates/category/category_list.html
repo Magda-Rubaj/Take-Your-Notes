@@ -20,7 +20,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <h6 id="exampleModalLabel">This {{object.name}} category will be deleted. Do you wish to proceed?</h6>
+                        <h6 id="exampleModalLabel">This category will be deleted. Do you wish to proceed?</h6>
                     </div>
                     <div class="modal-footer">
                         <form method="POST" action="{% url 'categories:delete' object.id %}">
@@ -39,8 +39,8 @@
                     <a class="note_name" href='/notes/detail/{{note.pk}}'>{{ note.name }}</a>
                     <div class="btn-wrapper">
                         <a class="edit" href='/notes/edit/{{note.pk}}'></a>
-                        <button type="button" class="btn-delete-note" data-toggle="modal" data-target="#del_note{{object.id}}"></button>
-                        <div class="modal fade" id="del_note{{object.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <button type="button" class="btn-delete-note" data-toggle="modal" data-target="#del_note{{note.id}}"></button>
+                        <div class="modal fade" id="del_note{{note.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
@@ -52,7 +52,10 @@
                                 <h6 id="exampleModalLabel">This note will be deleted. Do you wish to proceed?</h6>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Yes</button>
+                                <form method="POST" action="{% url 'notes:delete' note.id %}">
+                                    {% csrf_token %}
+                                    <input type="submit" value="Yes" class="btn btn-primary">
+                                </form>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                             </div>
                             </div>

@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic.edit import CreateView, FormView, DeleteView
 from django.views.generic import DetailView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -35,6 +35,14 @@ class NoteUpdateView(UpdateView):
     success_url = reverse_lazy('categories:all')
     model = Note
     template_name = 'note/note_update.html'
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+class NoteDeleteView(DeleteView):
+    model = Note
+    success_url = reverse_lazy('categories:all')
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
