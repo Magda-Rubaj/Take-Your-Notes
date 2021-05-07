@@ -1,2 +1,16 @@
 styles.css
 styles.css.map
+Pipfile
+.vscode
+
+take_your_notes/apps/core/migrations/
+take_your_notes/apps/core/__pycache__/
+take_your_notes/apps/category/migrations/
+take_your_notes/apps/category/__pycache__/
+take_your_notes/apps/note/migrations/
+take_your_notes/apps/note/__pycache__/
+take_your_notes/apps/user/migrations/
+take_your_notes/apps/user/__pycache__/
+
+.env
+
