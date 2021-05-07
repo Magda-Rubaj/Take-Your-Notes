@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class CategoryConfig(AppConfig):
-    name = 'category'
+    name = 'take_your_notes.apps.category'
