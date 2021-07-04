@@ -1,10 +1,15 @@
 {% load filters %}
 <nav>
     <ul>
-        <li><a id="notes" href="/categories/all">Notes</a></li>
+        <li><button id="categories">Notes</a></li>
             {% for category in category_list %} 
                 <div class="category">
                     <a class="category_name">{{ category.name }}</a>
+                    <div class="notes">
+                        {% for note in category.pk|note_list %}
+                            <a class="note_name" href="/notes/detail/{{note.pk}}">{{ note.name }}</a>
+                        {% endfor %} 
+                    </div>
                 </div>
             {% endfor %} 
         <li><a id="logout" href="/accounts/logout">Log out</a></li>
