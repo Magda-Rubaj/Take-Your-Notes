@@ -1,5 +1,5 @@
 from django import template
-from ...note.models import Note
+from take_your_notes.apps.note.models import Note
 
 
 register = template.Library()
@@ -8,3 +8,5 @@ register = template.Library()
 def note_list(value):
     query = Note.objects.filter(category=value)
     return query
+
+
