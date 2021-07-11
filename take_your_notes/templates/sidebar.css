@@ -10,12 +10,15 @@
 	top: 0;
 	left: 0;
 
+	transition: transform .5s;
+	transform: translateX(-100%);
+
 	color: white;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 64px 36px;
+	padding: 64px 20px;
 	text-align: left;
 }
 
@@ -39,6 +42,7 @@
 }
 
 .sidebar .section {
+	padding: 0 12px;
 	margin-top: 20px;
 	width: 100%;
 	text-align: left;
