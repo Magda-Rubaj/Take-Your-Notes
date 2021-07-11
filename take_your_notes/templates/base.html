@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
+    <link rel="stylesheet" href="sidebar.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,5 +19,56 @@
   <body>
     {% block content %}
     {% endblock %}
+
+    <div class="sidebar">
+      <input placeholder="search" class="sidebar__search" type="text"/>
+      <div class="sidebar__content">
+        <div class="section">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.8889 3.11111V17.1111H17.1111V24.8889H3.11111V3.11111H24.8889ZM24.8889 0H3.11111C1.4 0 0 1.4 0 3.11111V24.8889C0 26.6 1.4 28 3.11111 28H18.6667L28 18.6667V3.11111C28 1.4 26.6 0 24.8889 0ZM14 17.1111H6.22222V14H14V17.1111ZM21.7778 10.8889H6.22222V7.77778H21.7778V10.8889Z" fill="#CBC9C9"/>
+          </svg>              
+          <div>
+            Notes
+          </div>
+          <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.7025 0L11.5 8.65317L20.2975 0L23 2.66397L11.5 14L0 2.66397L2.7025 0Z" fill="#CBC9C9"/>
+          </svg>
+        </div>
+        <div class="section">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 22.1675V28H5.83252L23.0346 10.7979L17.2021 4.96542L0 22.1675ZM27.5451 6.28746C28.1516 5.68088 28.1516 4.70101 27.5451 4.09443L23.9056 0.454937C23.299 -0.151646 22.3191 -0.151646 21.7125 0.454937L18.8663 3.30121L24.6988 9.13373L27.5451 6.28746Z" fill="#CBC9C9"/>
+          </svg>                        
+          <div>
+            Transcript
+          </div>
+          <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.7025 0L11.5 8.65317L20.2975 0L23 2.66397L11.5 14L0 2.66397L2.7025 0Z" fill="#CBC9C9"/>
+          </svg>
+        </div>
+        <div class="section">
+          <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.25H3.33333V26.1C3.33333 26.8691 3.68452 27.6068 4.30964 28.1506C4.93476 28.6945 5.78261 29 6.66667 29H23.3333C24.2174 29 25.0652 28.6945 25.6904 28.1506C26.3155 27.6068 26.6667 26.8691 26.6667 26.1V7.25H5ZM11.6667 24.65H8.33333V11.6H11.6667V24.65ZM21.6667 24.65H18.3333V11.6H21.6667V24.65ZM22.6967 2.9L20 0H10L7.30333 2.9H0V5.8H30V2.9H22.6967Z" fill="#CBC9C9"/>
+          </svg>                        
+          <div>
+            Trash
+          </div>
+          <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.7025 0L11.5 8.65317L20.2975 0L23 2.66397L11.5 14L0 2.66397L2.7025 0Z" fill="#CBC9C9"/>
+          </svg>
+        </div>
+        <div class="section">
+          <svg width="31" height="28" viewBox="0 0 31 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27.3578 15.365C27.4176 14.9275 27.4574 14.4725 27.4574 14C27.4574 13.5275 27.4176 13.0725 27.3378 12.635L30.7059 10.325C31.0048 10.115 31.0845 9.73 30.9051 9.4325L27.7165 4.585C27.5172 4.27 27.0987 4.165 26.74 4.27L22.7741 5.67C21.9371 5.11 21.0602 4.655 20.0837 4.305L19.4858 0.595C19.426 0.245 19.0872 0 18.6886 0H12.3114C11.9128 0 11.5939 0.245 11.5341 0.595L10.9363 4.305C9.95973 4.655 9.06292 5.1275 8.24583 5.67L4.27995 4.27C3.92123 4.1475 3.50272 4.27 3.30343 4.585L0.114782 9.4325C-0.0845084 9.7475 -0.00479196 10.115 0.314073 10.325L3.68208 12.635C3.60236 13.0725 3.54258 13.545 3.54258 14C3.54258 14.455 3.58243 14.9275 3.66215 15.365L0.294143 17.675C-0.00479243 17.885 -0.0845084 18.27 0.094853 18.5675L3.2835 23.415C3.48279 23.73 3.9013 23.835 4.26002 23.73L8.2259 22.33C9.06292 22.89 9.9398 23.345 10.9163 23.695L11.5142 27.405C11.5939 27.755 11.9128 28 12.3114 28H18.6886C19.0872 28 19.426 27.755 19.4659 27.405L20.0638 23.695C21.0403 23.345 21.9371 22.8725 22.7542 22.33L26.7201 23.73C27.0788 23.8525 27.4973 23.73 27.6966 23.415L30.8852 18.5675C31.0845 18.2525 31.0048 17.885 30.6859 17.675L27.3578 15.365ZM15.5 19.25C12.2117 19.25 9.52129 16.8875 9.52129 14C9.52129 11.1125 12.2117 8.75 15.5 8.75C18.7883 8.75 21.4787 11.1125 21.4787 14C21.4787 16.8875 18.7883 19.25 15.5 19.25Z" fill="#CBC9C9"/>
+          </svg>                         
+          <div>
+            Settings
+          </div>
+          <svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 20.2975L9.27125 11.5L0 2.7025L2.85425 0L15 11.5L2.85425 23L0 20.2975Z" fill="#CBC9C9"/>
+            <path d="M0 20.2975L9.27125 11.5L0 2.7025L2.85425 0L15 11.5L2.85425 23L0 20.2975Z" fill="#CBC9C9"/>
+          </svg>            
+        </div>
+      </div>
+    </div>
   </body>
 </html>
